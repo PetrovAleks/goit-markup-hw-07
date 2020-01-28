@@ -29,6 +29,7 @@ p {
 .link-style {
   text-decoration: none;
   color: #fff;
+  cursor: pointer;
 }
 
 .list-style {
@@ -45,9 +46,21 @@ p {
   padding: 12px 18px 10px 18px;
 }
 
-.Sign-up {
+.user-button {
+  transition: border 200ms linear;
+  
+
+}
+
+.user-button:hover,
+.user-button:focus {
   border: 2px solid #fff;
   border-radius: 20px;
+}
+
+.user-nav-item:nth-child(1) {
+  margin-right: 20px;
+
 }
 
 .title a {
@@ -55,9 +68,10 @@ p {
   letter-spacing: 0.05em;
 }
 
-.user-button {
-  margin-right: 20px;
-}
+
+
+
+
 
 /*  
 =========== Section HERO
@@ -80,8 +94,17 @@ p {
   cursor: pointer;
   padding-top: 13px;
   padding-bottom: 13px;
-  background-color: #ff4e50;
+  background-color: rgba(255, 78, 80, 1);
+  border: 2px solid #ff4e50;
+  transition: background-color 200ms linear;
 }
+
+.button-hero:hover,
+.button-hero:focus {
+  background-color: rgba(255, 78, 80, 0);
+
+}
+
 
 .slogan {
   text-transform: uppercase;
@@ -123,51 +146,57 @@ h2.title {
   width: 120px;
   border-radius: 100%;
   overflow: hidden;
-
   margin-bottom: 20px;
 }
 
-.partenrs-item a {
+.partners-link {
   position: relative;
 }
 
-.iconflask-bgcolor::before {
+
+.svg-wrapper {
   content: '';
   position: absolute;
-  background-color: #ff4e50;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 40px;
-  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   border: 4px solid #fff;
   border-radius: 100%;
-
-  left: 120px;
-  top: 120px;
-
-  transform: translate(-100%, -100%);
+  width: 40px;
+  height: 40px;
+  left: 100%;
+  top: 100px;
+  transform: translate3d(-100%, -50%, 0);
   z-index: 3;
 }
 
-.icon-flask {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-
-  left: 100px;
-  top: 100px;
-  transform: translate(-30%, -40%);
-  z-index: 4;
+.svg_bgcolor--red {
+  background-color: #ff4e50;
 }
 
-use {
-  transform: scale3d(1, 1, 0);
-  translate: transform 2500ms linear;
+.svg_bgcolor--aqua {
+  background-color: #1cd7ad;
 }
 
-.partenrs-item:hover use,
-.partenrs-item:focus use {
-  transform: scale3d(1.1, 1.1, 0);
+.svg_bgcolor--orange {
+  background-color: #ffa507;
+}
+
+.svg_bgcolor--blue {
+  background-color: #4e73db;
+}
+
+.partners-svg {
+
+  height: 16px;
+  transform: scale(1);
+  transition: transform 200ms linear;
+}
+
+.partenrs-item:hover .partners-svg,
+.partenrs-item:focus .partners-svg {
+  transform: scale(1.15);
 }
 
 .name-partner {
@@ -191,6 +220,15 @@ use {
   color: #ff4e50;
   padding-top: 13px;
   padding-bottom: 13px;
+  cursor: pointer;
+  transition: background-color 200ms linear;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #ff4e50;
+  color: #fff;
+
 }
 
 @media screen and (max-width: 659px) {
@@ -284,7 +322,7 @@ use {
     display: inline-block;
   }
 
-  .partenrs-item + .partenrs-item {
+  .partenrs-item+.partenrs-item {
     margin-top: 30px;
   }
 
